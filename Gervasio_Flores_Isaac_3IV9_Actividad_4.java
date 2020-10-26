@@ -1,13 +1,15 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
+public class Gervasio_Flores_Isaac_3IV9_Actividad_4 {
 
     public static void main(String[] args) throws InterruptedException {
 
-       Scanner scann;
+        Scanner scann;
 
         String menu;
         do {
@@ -17,7 +19,7 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
             System.out.println("2 CONVERTIR UN NUMERO DECIMAL A BINARIO");
             System.out.println("3 CONVIERTA TEMPERATURA EN GRADOS CELSIUS A GRADOS FAHRENHEIT, KELVINE Y RANKINE");
             System.out.println("4 INTRODUCE UNA SERIE DE NUMEROS DEBERA CONTAR CUANTOS SON POSITIVOS  Y CUANTOS NEGATIVOS");
-            System.out.println("5 ");
+            System.out.println("5 LEA CANTIDADES PRECIOS Y LOS PRODUCTOS AL FINAL MUESTRE TOTAL DE LOS PRODUCTOS COMPRADOS Y SU FACTURA TOTAL");
             System.out.println("6 ");
             System.out.println("7 ");
             System.out.println("8 ");
@@ -80,7 +82,7 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
                     } while (!menu1.equalsIgnoreCase("s"));
                     break;
 
-   case "2":
+                case "2":
                     System.out.println(" 2 ");
 
                     String menu2;
@@ -114,13 +116,17 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
 
                     break;
 
-    case "3":
+                case "3":
                     System.out.println(" 3 ");
 
-                    float centigrado,fahrenheit,kelvin,rankine;
-                    int resp,datoIn;
+                    float centigrado,
+                     fahrenheit,
+                     kelvin,
+                     rankine;
+                    int resp,
+                     datoIn;
 
-                   // Scanner teclado = new Scanner(System.in);
+                    // Scanner teclado = new Scanner(System.in);
                     scann = new Scanner(System.in);
                     resp = 1;
 
@@ -143,7 +149,7 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
                         System.out.println("Si desea convertir a grados kelvin presione 2 ");
 
                         System.out.println("");
-                        
+
                         System.out.println("Si desea convertir a grados rankine presione 3 ");
 
                         System.out.println("");
@@ -159,7 +165,7 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
                                 System.out.println(fahrenheit + " grados Fahrenheit");
                                 System.out.println(" ");
                                 System.out.println("******************************************************************");
-                        System.out.println("******************************************************************");
+                                System.out.println("******************************************************************");
 
                                 break;
 
@@ -169,18 +175,18 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
 
                                 System.out.println(centigrado + " grados centigrados equivalen a " + kelvin + " grados kelvin");
                                 System.out.println(" ");
-System.out.println("******************************************************************");
-                        System.out.println("******************************************************************");
+                                System.out.println("******************************************************************");
+                                System.out.println("******************************************************************");
                                 break;
 
-                                case 3:
-                               // 12 °C × 9/5 + 491.67
-                                rankine = (float) (centigrado * 9/5 + 491.67);
+                            case 3:
+                                // 12 °C × 9/5 + 491.67
+                                rankine = (float) (centigrado * 9 / 5 + 491.67);
 
                                 System.out.println(centigrado + " grados centigrados equivalen a " + rankine + " grados rankine");
                                 System.out.println(" ");
-System.out.println("******************************************************************");
-                        System.out.println("******************************************************************");
+                                System.out.println("******************************************************************");
+                                System.out.println("******************************************************************");
                                 break;
 
                             default:
@@ -190,7 +196,7 @@ System.out.println("************************************************************
                         }
 
                         System.out.println("Desea hacer otra conversion? digite: 1 si / 2 no");
-System.out.println("******************************************************************");
+                        System.out.println("******************************************************************");
                         System.out.println("******************************************************************");
                         resp = scann.nextInt();
 
@@ -198,65 +204,130 @@ System.out.println("************************************************************
 
                     break;
 
-case "4":
-                   
-            String menu3;
-            System.out.println("******************************************************************");
-                        System.out.println("******************************************************************");
-            System.out.println("INTRODUCE NUMEROS POSITIVOS O NEGATIVOS, AL TERMMINAR INTRODUCE ' OK '...");
-            do {
-             menu3 = new String("");
-             boolean flag = true;
-            int contar = 0;
-            int contar2 = 0; 
-             
-             do{   
-              System.out.println("INTRODUCE UN NUMERO Y PRESIONA ENTER...");    
-              String dato = scann.nextLine();
-                    if(!dato.equalsIgnoreCase("ok")){
-                        int numero = Integer. parseInt(dato);
-                        if (numero > 0) {
-                            contar++;
-                            } else {
+                case "4":
+
+                    String menu3;
+                    System.out.println("******************************************************************");
+                    System.out.println("******************************************************************");
+                    System.out.println("INTRODUCE NUMEROS POSITIVOS O NEGATIVOS, AL TERMMINAR INTRODUCE ' OK '...");
+                    do {
+                        menu3 = new String("");
+                        boolean flag = true;
+                        int contar = 0;
+                        int contar2 = 0;
+
+                        do {
+                            System.out.println("INTRODUCE UN NUMERO Y PRESIONA ENTER...");
+                            String dato = scann.nextLine();
+                            if (!dato.equalsIgnoreCase("ok")) {
+                                int numero = Integer.parseInt(dato);
+                                if (numero > 0) {
+                                    contar++;
+                                } else {
                                     contar2++;
-                                    }
-                      }else{
-                        flag=false;
-                        }
-             }while(flag);
-        
-            System.out.println("contador final numeros positivos: "+ contar );
-            System.out.println("contador final numeros negativos: "+ contar2 );  
-            System.out.println(" ");
-            System.out.println("******************************************************************");
+                                }
+                            } else {
+                                flag = false;
+                            }
+                        } while (flag);
+
+                        System.out.println("contador final numeros positivos: " + contar);
+                        System.out.println("contador final numeros negativos: " + contar2);
+                        System.out.println(" ");
                         System.out.println("******************************************************************");
-            System.out.println("****  OPRIME S PARA REGRESAR AL MENU PRINCIPAL CUALQUIER OTRA TECLA PARA CONTINUAR  ********");
-                scann = new Scanner(System.in);
-                menu3 = scann.nextLine();
-            } while (!menu3.equalsIgnoreCase("s"));
-                   
-            break;
-    
-                    
-                    
-                    case "5":
+                        System.out.println("******************************************************************");
+                        System.out.println("****  OPRIME S PARA REGRESAR AL MENU PRINCIPAL CUALQUIER OTRA TECLA PARA CONTINUAR  ********");
+                        scann = new Scanner(System.in);
+                        menu3 = scann.nextLine();
+                    } while (!menu3.equalsIgnoreCase("s"));
+
                     break;
-                    
-                    case "6":
+
+                case "5":
+                    String[] nombreProducto = {"PRODUCTO ", "Pizza", "Chiken Bake", "Refresco", "Ensalada Cesar"};
+                    double[] precioProducto = {0.0, 200.0, 50.5, 21.50, 65.5};
+                    boolean continuar;
+                    String productoComprado = "";
+                    String nombreComprador = "";
+                    double precio = 0;
+                    double totalPagar = 0;
+                    int numeroProducto;
+                    int cantidad;
+
+                    List<String> productosList = new ArrayList<>();
+                    List<Double> sumaList = new ArrayList<>();
+
+                    System.out.println("PRODUCTOS EN LA TIENDA");
+
+//MUESTRA PRODUCTOS 
+                    for (int i = 1; i < nombreProducto.length; i++) {
+                        System.out.println(i + " Producto: " + nombreProducto[i] + "| Precio: " + precioProducto[i]);
+                    }
+
+                    String menu4,
+                     exit;
+
+                    do {
+                        menu4 = "";
+
+                        do {
+                            exit = "";
+                            System.out.println("Igrese el numero del articulo que desea comprar");
+
+                            scann = new Scanner(System.in);
+                            numeroProducto = scann.nextInt();
+
+                            System.out.println("Igrese la cantidad que desea comprar");
+                            cantidad = scann.nextInt();
+
+                            String nombreProductoT = nombreProducto[numeroProducto];
+                            double suma = (double) precioProducto[numeroProducto] * cantidad;
+
+                            productosList.add(nombreProductoT);
+                            sumaList.add(suma);
+                            System.out.println("******************************************************************");
+                            System.out.println("******************************************************************");
+                            System.out.println("****  OPRIME f para terminar de comprar... ********");
+                            scann = new Scanner(System.in);
+                            exit = scann.nextLine();
+                        } while (!exit.equalsIgnoreCase("f"));
+
+                        for (int x = 0; x < productosList.size(); x++) {
+
+                            totalPagar += sumaList.get(x);
+                            System.out.println("Producto: " + productosList.get(x) + "|  Precio: " + sumaList.get(x));
+
+                        }
+
+                        System.out.println("TOTAL : " + totalPagar);
+
+                        System.out.println(" ");
+                        System.out.println("******************************************************************");
+                        System.out.println("******************************************************************");
+                        System.out.println("****  OPRIME S PARA REGRESAR AL MENU PRINCIPAL CUALQUIER OTRA TECLA PARA CONTINUAR  ********");
+                        scann = new Scanner(System.in);
+                        menu4 = scann.nextLine();
+                    } while (!menu4.equalsIgnoreCase("s"));
+
+                    System.out.println("Gracia por su compra");
+
                     break;
-                    
-                    case "7":
+
+                case "6":
                     break;
-                    
-                    case "8":
+
+                case "7":
                     break;
-                    
-                    case "9":
+
+                case "8":
                     break;
-                    
-                    case "10":
+
+                case "9":
                     break;
-                    
+
+                case "10":
+                    break;
+
                 default:
                     break;
             }
