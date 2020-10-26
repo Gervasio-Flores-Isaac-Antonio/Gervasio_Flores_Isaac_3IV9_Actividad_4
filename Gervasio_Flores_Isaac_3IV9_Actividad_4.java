@@ -249,13 +249,10 @@ public class Gervasio_Flores_Isaac_3IV9_Actividad_4 {
                     boolean continuar;
                     String productoComprado = "";
                     String nombreComprador = "";
-                    double precio = 0;
-                    double totalPagar = 0;
-                    int numeroProducto;
-                    int cantidad;
+                    
 
-                    List<String> productosList = new ArrayList<>();
-                    List<Double> sumaList = new ArrayList<>();
+                    List<String> productosList ;
+                    List<Double> sumaList;
 
                     System.out.println("PRODUCTOS EN LA TIENDA");
 
@@ -269,6 +266,12 @@ public class Gervasio_Flores_Isaac_3IV9_Actividad_4 {
 
                     do {
                         menu4 = "";
+                        double precio = 0;
+                        double totalPagar = 0;
+                        int numeroProducto;
+                        int cantidad;
+                       productosList = new ArrayList<>();
+                       sumaList = new ArrayList<>();
 
                         do {
                             exit = "";
@@ -287,7 +290,7 @@ public class Gervasio_Flores_Isaac_3IV9_Actividad_4 {
                             sumaList.add(suma);
                             System.out.println("******************************************************************");
                             System.out.println("******************************************************************");
-                            System.out.println("****  OPRIME f para terminar de comprar... ********");
+                            System.out.println("****  OPRIME f PARA TERMINAR COMPRA,  CUALQUIER OTRA TECLA PARA OTRA COMPRA ... ********");
                             scann = new Scanner(System.in);
                             exit = scann.nextLine();
                         } while (!exit.equalsIgnoreCase("f"));
