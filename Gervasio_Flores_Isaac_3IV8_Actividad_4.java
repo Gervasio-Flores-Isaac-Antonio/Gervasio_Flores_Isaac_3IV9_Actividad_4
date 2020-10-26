@@ -7,7 +7,7 @@ public class Gervasio_Flores_Isaac_3IV8_Actividad_4 {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Scanner scann;
+       Scanner scann;
 
         String menu;
         do {
